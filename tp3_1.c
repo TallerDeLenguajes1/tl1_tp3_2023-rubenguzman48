@@ -7,6 +7,7 @@ int main()
     int matriz[5][12];
     srand(time(NULL));
 
+    //a. Cargue dicha matriz con valores aleatorios entre 10000 y 50000.
     //Carga de la Matriz
     for(int i=0; i<5; i++)
     {
@@ -16,6 +17,7 @@ int main()
         }
     }
 
+    //b. Muestre por pantalla los valores cargados
     //Muestra de la Matriz
     for(int i=0; i<5; i++)
     {
@@ -26,6 +28,7 @@ int main()
         printf("\n");
     }
 
+    //c. Saque el promedio de ganancia por año y muestrelos por pantalla
     //Suma por año de la matriz
     int suma[5];
     int aux;
@@ -46,6 +49,7 @@ int main()
         printf("\n\tAnio %d: %d", i+1, suma[i]);
     }
 
+    //Obtenga el valor máximo y el valor mínimo obtenido informando el “año” y el “mes” decuándo ocurrió.
 
     //Valor maximo y valor minimo obtenido informando el año y el mes
     int minAnio,minMes,maxAnio,maxMes;
