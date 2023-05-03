@@ -58,11 +58,41 @@ int main()
         }
         float promedio;
         promedio=suma/columnas;
-        printf("Alo %d: %.2f\n", i+1, promedio);
+        printf("Año %d: %.2f\n", i+1, promedio);
     }
     
+    //d. Obtenga el valor máximo y el valor mínimo obtenido informando el “año” y el “mes” de cuándo ocurrió.
+    //Encuentre el valor maximo, minimo y su posicion en la matriz
+    int maximo = matriz[0][0];
+    int minimo = matriz[0][0];
+    int maximoAnio = 0;
+    int maximoMes = 0;
+    int minimoAnio = 0;
+    int minimoMes = 0;
 
-
+    for (int i = 0; i < filas; i++)
+    {
+        for (int j = 0; j < columnas; j++)
+        {
+            if(matriz[i][j]>maximo)
+            {
+                maximo = matriz[i][j];
+                maximoAnio = i + 1;
+                maximoMes = j + 1;
+            }
+            if(matriz[i][j]<minimo)
+            {
+                minimo = matriz[i][j];
+                minimoAnio = i + 1;
+                minimoMes = j + 1;
+            }
+        }
+        
+    }
+    
+    //Muestro por pantalla el maximo y minimo con su mes y año
+    printf("Valor maximo obtenido: %d (Año %d, Mes %d)\n", maximo, maximoAnio, maximoMes);
+    printf("Valor minimo obtenido: %d (Año %d, Mes %d)\n", minimo, minimoAnio, minimoMes);
 
 
     return 0;

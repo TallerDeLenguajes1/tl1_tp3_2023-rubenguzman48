@@ -57,7 +57,7 @@ int main() {
     for (int i = 0; i < FILAS; i++) {
         for (int j = 0; j < COLUMNAS; j++) {
             if (matriz[i][j] > maximo) {
-                maximo = matriz[i][j];y
+                maximo = matriz[i][j];
                 maximo_anio = i + 1;
                 maximo_mes = j + 1;
             }
