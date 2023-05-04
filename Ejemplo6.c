@@ -81,3 +81,32 @@ int main()
 
 return 0;
 }
+
+
+// Función que calcula el costo total de un producto
+float CalcularCosto(Producto prod) {
+    return prod.Cantidad * prod.PrecioUnitario;
+}
+
+// Función que muestra los datos de un cliente por consola
+void MostrarCliente(Cliente cli) {
+    printf("\n--- DATOS DEL CLIENTE ---\n");
+    printf("ID: %d\n", cli.ClienteID);
+    printf("Nombre: %s\n", cli.NombreCliente);
+    printf("Cantidad de productos a pedir: %d\n", cli.CantidadProductosAPedir);
+    printf("\n--- PRODUCTOS DEL CLIENTE ---\n");
+    for (int i = 0; i < cli.CantidadProductosAPedir; i++) {
+        printf("\n--- PRODUCTO %d ---\n", i+1);
+        printf("ID: %d\n", cli.Productos[i].ProductoID);
+        printf("Cantidad: %d\n", cli.Productos[i].Cantidad);
+        printf("Tipo: %s\n", cli.Productos[i].TipoProducto);
+        printf("Precio unitario: %.2f\n", cli.Productos[i].PrecioUnitario);
+        printf("Costo total: %.2f\n", CalcularCosto(cli.Productos[i]));
+    }
+    printf("\n--- TOTAL A PAGAR DEL CLIENTE ---\n");
+    float totalCliente = 0;
+    for (int i = 0; i < cli.CantidadProductosAPedir; i++) {
+        totalCliente += CalcularCosto(cli.Productos[i]);
+    }
+    printf("El cliente debe pagar : $%.2f\n", totalCliente);
+}
